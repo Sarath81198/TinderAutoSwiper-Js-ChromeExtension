@@ -1,0 +1,25 @@
+{
+    "manifest_version" : 2,
+    "name" : "Dater",
+    "version" : "1.0.0",
+    "content_scripts" : [
+        {
+            "matches" : ["https://tinder.com/*"],
+            "js" : [
+                "swiper.js"
+            ]
+        }
+    ],
+    "permissions":[
+        "tabs"
+    ],
+    "browser_action": {
+        "default_popup" : "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
