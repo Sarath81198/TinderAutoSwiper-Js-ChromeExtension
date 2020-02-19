@@ -51,7 +51,7 @@ function startSwipe(message, sender, sendResponse) {
                     closeMatch();
                 }
             }
-        }, 2000);
+        }, 1000);
     }
     else if(message.txt === "stop_swiping"){
         stopSwipe()
