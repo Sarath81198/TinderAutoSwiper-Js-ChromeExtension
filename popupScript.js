@@ -14,6 +14,7 @@ function waitForLoad(id, callback) {
 waitForLoad("startSwiping", function () {
     document.getElementById("startSwiping").onclick = function () {
         startSwiping()
+        sendSpeedRate()
     }
 });
 
@@ -31,8 +32,10 @@ function gotTabs(tabs) {
     console.log(tabs[0].id)
     let currentTab = tabs[0].id
     let message = {
-        txt : "start_swiping"
+        txt : "start_swiping",
+        speed : sendSpeedRate()
     }
+    console.log(message)
     chrome.tabs.sendMessage(currentTab, message)
 }
 
@@ -62,3 +65,16 @@ function gotEndTabs(tabs) {
     }
     chrome.tabs.sendMessage(currentTab, message)
 }
+
+
+function sendSpeedRate() {
+    var ele = document.getElementsByName('speed');
+
+    for (i = 0; i < ele.length; i++) {
+        if (ele[i].checked){
+            console.log(ele[i].value);
+            return ele[i].value;
+        }
+
+    }
+} 

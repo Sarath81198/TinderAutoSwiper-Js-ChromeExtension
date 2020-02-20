@@ -7,9 +7,9 @@ function getElementByXpath(path) {
 
 
 function like() {
-    var likeBtnXpath = '//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]';
-    var likeBtn = getElementByXpath(likeBtnXpath)
-    likeBtn.click()
+    // var likeBtnXpath = '//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]';
+    // var likeBtn = getElementByXpath(likeBtnXpath)
+    // likeBtn.click()
 
     console.log("liked")
 }
@@ -40,7 +40,8 @@ function stopSwipe(){
 
 
 function startSwipe(message, sender, sendResponse) {
-    if(message.txt == "start_swiping"){
+    if(message.txt === "start_swiping"){
+        speed = parseInt(message.speed) * 1000
         autoLike = setInterval(() => {
             try {
                 like()
@@ -51,7 +52,7 @@ function startSwipe(message, sender, sendResponse) {
                     closeMatch();
                 }
             }
-        }, 1000);
+        }, speed);
     }
     else if(message.txt === "stop_swiping"){
         stopSwipe()
