@@ -1,9 +1,137 @@
 <html>
     <head>
     </head>
+    <style>
+        html{
+            font-family: 'Montserrat', sans-serif;
+            color: #fe6e4c;
+            font-size: 20px
+        }
+        body{
+            width:300px;
+            height:400px;
+        }
+        button{
+            display:block;
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            border: 1px solid white;
+            background-color: white;
+            box-shadow:
+            #f4f2f2 4px 4px 8px,
+            #f4f2f2 -4px -4px 8px;
+        }  
+
+        .flex-container{
+            padding:20px;
+        }
+
+        .flex-container1{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        } 
+
+        .flex-container1 > div {
+            margin: 10px;
+
+        }
+
+        .flex-container2{
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .flex-container2 > div {
+            margin: 20px;
+        }
+
+
+        hr.style-one {
+            border: 0;
+            height: 1px;
+            background: #333;
+            background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+            background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+        }
+
+
+        .footer{
+            display: flex;
+            justify-content: center;
+            color:#a9a9a9;
+            
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <body>
-        <button id="startSwiping">Start Swiping</button>
-        <button id="stopSwiping">Stop Swiping</button>
+
+        <div class="flex-container">
+
+            <div class="flex-container2">
+                <div class="image">
+                    <img src="images\LogoName.png" style="width:100%;">
+                </div>
+            </div>
+        
+
+        <!-- Button -->
+        <div class="flex-container1">
+
+            
+    
+            <div>
+                <i class="fa fa-home"></i> &ensp; Login to your <b>Tinder</b> account.
+            </div>
+            <div>
+                <i class="fa fa-spinner"></i> &ensp; Wait till the whole page loads.
+            </div>
+            <div>
+                <i class="fa fa-heart" style="font-size:15px;background: -webkit-gradient(linear, left top, left bottom, from(#43f4f2), to(#06e3ab));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"></i> &ensp; To Start Auto-Swipe.
+            </div>
+            <div>
+                <i class="fa fa-close" style="font-size:15px; background: -webkit-gradient(linear, left top, left bottom, from(#f29256), to(#ff5746));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"></i> &ensp; To End Swiping.
+            </div>
+            
+            
+        </div>
+
+        <div class="flex-container2">
+
+            <div>
+                <button id="startSwiping"><i class="fa fa-heart" style="font-size:48px;background: -webkit-gradient(linear, left top, left bottom, from(#43f4f2), to(#06e3ab));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;"></i>
+                </button>
+            </div>
+
+            <div>
+                <button id="stopSwiping"><i class="fa fa-close" style="font-size:48px; background: -webkit-gradient(linear, left top, left bottom, from(#f29256), to(#ff5746));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;"></i>
+                </button>
+            </div>
+
+        </div>
+
+        </div>
+        
+        <hr class="style-one">
+        
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p style="font-size:9px">Developed by a <b>SINGLE</b> Developer. YES! I'm single. ;_;</p>
+        </footer>
     </body>
     <script src="popupScript.js"></script>
 </html>
