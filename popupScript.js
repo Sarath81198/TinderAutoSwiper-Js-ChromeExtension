@@ -68,7 +68,7 @@ function gotEndTabs(tabs) {
 
 
 function sendSpeedRate() {
-    var ele = document.getElementsByName('speed');
+    var ele = document.getElementsByName('switch');
 
     for (i = 0; i < ele.length; i++) {
         if (ele[i].checked){
