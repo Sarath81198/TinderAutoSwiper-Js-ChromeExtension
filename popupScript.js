@@ -9,13 +9,15 @@ function waitForLoad(id, callback) {
 }
 
 
-
 // Start swiping
 waitForLoad("startSwiping", function () {
+    setBtnUse()
     document.getElementById("startSwiping").onclick = function () {
         document.getElementById("startSwiping").disabled = true;
         startSwiping()
         sendSpeedRate()
+        addBtnState("disabled")
+        setBtnUse()
     }
 });
 
@@ -31,6 +33,7 @@ function startSwiping(){
 
 function gotTabs(tabs) {
     console.log(tabs[0].id)
+    
     let currentTab = tabs[0].id
     let message = {
         txt : "start_swiping",
@@ -44,8 +47,9 @@ function gotTabs(tabs) {
 // End swiping
 waitForLoad("stopSwiping", function () {
     document.getElementById("stopSwiping").onclick = function () {
-        document.getElementById("stopSwiping").disabled = true;
         endSwiping()
+        addBtnState("enabled")
+        setBtnUse()
     }
 });
 
@@ -79,4 +83,26 @@ function sendSpeedRate() {
         }
 
     }
-} 
+}
+
+
+function addBtnState(buttonState) {
+    chrome.storage.local.set({'likeBtn': buttonState}, function(){
+        console.log("like button state is "+ buttonState);
+    });
+}
+
+function setBtnUse(){
+    chrome.storage.local.get(['likeBtn'], function a(result){
+        if(result.likeBtn == "disabled"){
+            document.getElementById("startSwiping").disabled = true;
+            document.getElementById("stopSwiping").disabled = false;
+            console.log("Like btn disable, stop button enable")
+        }
+        else if (result.likeBtn == "enabled") {
+            document.getElementById("startSwiping").disabled = false;
+            document.getElementById("stopSwiping").disabled = true;
+            console.log("Like btn enable, stop button disable")
+        }
+    })
+}
