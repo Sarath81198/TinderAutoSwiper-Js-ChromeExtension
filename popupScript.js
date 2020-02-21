@@ -13,6 +13,7 @@ function waitForLoad(id, callback) {
 // Start swiping
 waitForLoad("startSwiping", function () {
     document.getElementById("startSwiping").onclick = function () {
+        document.getElementById("startSwiping").disabled = true;
         startSwiping()
         sendSpeedRate()
     }
@@ -43,6 +44,7 @@ function gotTabs(tabs) {
 // End swiping
 waitForLoad("stopSwiping", function () {
     document.getElementById("stopSwiping").onclick = function () {
+        document.getElementById("stopSwiping").disabled = true;
         endSwiping()
     }
 });

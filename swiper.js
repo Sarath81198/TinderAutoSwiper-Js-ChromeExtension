@@ -7,9 +7,9 @@ function getElementByXpath(path) {
 
 
 function like() {
-    var likeBtnXpath = '//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]';
-    var likeBtn = getElementByXpath(likeBtnXpath)
-    likeBtn.click()
+    // var likeBtnXpath = '//*[@id="content"]/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[3]';
+    // var likeBtn = getElementByXpath(likeBtnXpath)
+    // likeBtn.click()
 
     console.log("liked")
 }
